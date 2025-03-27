@@ -3,7 +3,6 @@ link please...
 공식 GitHub 저장소
 https://github.com/sigrokproject/libserialport
 
-
 libserialport가 속한 sigrok 프로젝트의 공식 웹사이트
 https://sigrok.org/wiki/Main_Page
 
