@@ -25,7 +25,7 @@ void *send_serial_data(void *arg, SensorData *tx) {
         printf("Error reading data: %d\n", tx_bytes);
     }
 
-    return tx;
+    return 0;
 }
 
 // 시리얼 데이터 수신 함수

@@ -30,4 +30,4 @@ void *send_serial_data(void *arg, SensorData *tx);
 // 시리얼 데이터 수신 함수
 void *receive_serial_data(void *arg, uint16_t *buffer);
 
-#endif // BOWLINGSQL_H
+#endif 
