@@ -27,7 +27,7 @@ bool initMySQL(MySQLConnection *mysql);
 void closeMySQL(MySQLConnection *mysql);
 
 // Data 저장 함수
-bool saveData(MySQLConnection *mysql, SensorData *buffer);
+bool saveData(MySQLConnection *mysql, SensorData *rx);
 
 // 시간별 통계 업데이트 함수
 bool updateHourStats(MySQLConnection *mysql);
