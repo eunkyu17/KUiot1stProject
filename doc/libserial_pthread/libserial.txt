@@ -1,5 +1,3 @@
-link please...
-
 공식 GitHub 저장소
 https://github.com/sigrokproject/libserialport
 
