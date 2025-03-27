@@ -1,1 +1,20 @@
 link please...
+
+개념과 예제
+https://reakwon.tistory.com/56?utm_source
+
+내용정리
+https://jungwoon.github.io/linux/2017/07/11/pthread.html?utm_source
+
+상세설명
+https://junstar92.tistory.com/229?utm_source
+
+사용 예제
+https://github.com/Pithikos/C-Thread-Pool
+
+질문&답변 페이지
+https://stackoverflow.com/questions/tagged/pthreads
+
+관련 논문
+https://koasas.kaist.ac.kr/handle/10203/18503?utm_source
+
