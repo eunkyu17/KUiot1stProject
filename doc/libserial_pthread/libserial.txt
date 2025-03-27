@@ -6,11 +6,12 @@ https://github.com/sigrokproject/libserialport
 libserialport가 속한 sigrok 프로젝트의 공식 웹사이트
 https://sigrok.org/wiki/Main_Page
 
+예제코드 모음
+https://github.com/sigrokproject/libserialport/tree/master/examples
+
 문제해결과 사용 사례
 https://stackoverflow.com/questions/tagged/libserialport  
 
-예제코드 모음
-https://github.com/sigrokproject/libserialport/tree/master/examples
 
 버그 피드백
 https://github.com/sigrokproject/libserialport/issues
