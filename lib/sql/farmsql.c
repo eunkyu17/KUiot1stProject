@@ -42,7 +42,7 @@ void closeMySQL(MySQLConnection *mysql)
     }
 }
 
-bool saveData(MySQLConnection *mysql, SensorData *buffer)
+bool saveData(MySQLConnection *mysql, SensorData *rx)
 {
     char query[512];
 
@@ -54,7 +54,7 @@ bool saveData(MySQLConnection *mysql, SensorData *buffer)
 
     // 쿼리 준비
     snprintf(query, sizeof(query), "INSERT INTO data_records (Time, Temperature, Humidity, SoilMoisture, Sunshine, Cond) VALUES ('%s', %d, %d, %d, %d, '%s')",
-             time, buffer->temperature, buffer->humidity, buffer->soil, buffer->sun, buffer->cond);
+             time, rx->temperature, rx->humidity, rx->soil, rx->sun, rx->cond);
 
     // 쿼리 실행
     if (mysql_query(mysql->conn, query))
