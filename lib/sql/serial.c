@@ -13,8 +13,7 @@ struct sp_port *setup_serial_port(const char *port_name) {
 }
 
 // 시리얼 데이터 전송    port pointer  온도, 습도, 상태 등 데이터 전달 어떤형식으로?
-void *send_serial_data(void *arg, SensorData *tx) {
-    ThreadData *data = (ThreadData *)arg;     // 포트 및 SQL 정보 갖고 있는 구조체
+void *send_serial_data(struct sp_port *port, SensorData *tx) {
     int tx_bytes;
 
     tx_bytes = sp_blocking_write(data->port, tx, sizeof(*tx), 1000);
@@ -25,22 +24,29 @@ void *send_serial_data(void *arg, SensorData *tx) {
         printf("Error reading data: %d\n", tx_bytes);
     }
 
-    return tx;
+    return 0;
 }
 
 // 시리얼 데이터 수신 함수
-void *receive_serial_data(void *arg, uint16_t *buffer) {
-    ThreadData *data = (ThreadData *)arg;
+void *receive_serial_data(struct sp_port *port, uint16_t *buffer) {
     int read_bytes;
 
-    read_bytes = sp_blocking_read(data->port, buffer, sizeof(buffer), 1000);
+    read_bytes = sp_blocking_read(port, buffer, sizeof(buffer), 1000);
     if (read_bytes > 0){
         printf("Received serial data \n");
+
+        // SensorData 구조체로 매핑
+        rx.temperature = buffer[0];
+        rx.humidity = buffer[1];
+        rx.soil = buffer[2];
+        rx.sun = buffer[3];
+        rx.cond = buffer[4];
+        
     }
     else{
         printf("Error reading data: %d\n", read_bytes);
     }
-    return buffer;
+    return 0;
 }
 
 // https://www.joinc.co.kr/w/Site/Thread/Beginning/PthreadApiReference              pthread
